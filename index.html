@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link rel="icon" href="favicon.ico">
+
+        <meta property="article:author" content="https://www.facebook.com/jdnichollsc" />
+        <meta property="og:title" content="Phaser Kinetic Scrolling Plugin" />
+        <meta property="og:description" content="Kinetic Scrolling plugin for Canvas using Phaser Framework." />
+        <meta property="og:image" content="https://raw.githubusercontent.com/jdnichollsc/Phaser-Kinetic-Scrolling-Plugin/main/img/plugin.png" />
+
+        <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/print.css" media="print">
+
+                    <!--[if lt IE 9]>
+                                                                <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+                                                                <![endif]-->
+        <title>Phaser Kinetic Scrolling Plugin by jdnichollsc</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="inner">
+                <h1>Phaser Kinetic Scrolling Plugin</h1>
+                <h2>Kinetic Scrolling plugin for Canvas using Phaser Framework</h2>
+                <a href="https://github.com/proyecto26/Phaser-Kinetic-Scrolling-Plugin" class="button"><small>View project on</small> GitHub</a>
+                <img id="linkZelda" style="width: 200px;position: absolute;right: 0px;bottom: -43px;" src="img/link.png" alt="Leave a comment!">
+            </div>
+        </header>
+
+        <div id="content-wrapper">
+            <div class="inner clearfix">
+                <section id="main-content">
+
+                    <div id="kinematicHorizontalGame" style="position: relative;"></div>
+                    <br />
+                    <h1>
+                        <b id="kinetic-scrolling-plugin-for-phaser-framework" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></b>Kinetic Scrolling Plugin for Phaser Framework</h1>
+
+                    <p>The vertical and horizontal scrolling is very useful feature in the games for example to display a section of levels and with this plugin you can simulate the scrolling within a <b>canvas</b> element of <b>HTML5</b>... so check this awesome plugin to <b>Phaser Framework</b>!</p>
+
+                    <p>//Kinetic scrolling based on <a href="http://ariya.ofilabs.com/2013/11/javascript-kinetic-scrolling-part-2.html">http://ariya.ofilabs.com/2013/11/javascript-kinetic-scrolling-part-2.html</a></p>
+					
+					<h2>
+						<a id="download-the-plugin" class="anchor" href="#download-the-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download the Plugin</h2>
+
+					<p>Install via <a href="http://bower.io">bower</a></p>
+
+					<p><code>bower i phaser-kinetic-scrolling-plugin</code></p>
+
+					<p>Install via <a href="https://www.npmjs.com">npm</a></p>
+
+					<p><code>npm i phaser-kinetic-scrolling-plugin</code></p>
+					
+                    <h2>
+                        <b id="load-the-plugin" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></b>Load the Plugin</h2>
+
+                    <div class="highlight highlight-javascript"><pre><span class="pl-v">this</span>.game.kineticScrolling <span class="pl-k">=</span> <span class="pl-v">this</span>.game.<span class="pl-c1">plugins</span>.<span class="pl-c1">add</span>(Phaser.<span class="pl-c1">Plugin</span>.KineticScrolling);</pre></div>
+
+                    <h2>
+                        <b id="change-default-settings-of-the-plugin---it-isnt-necessary-default-is-horizontal" class="anchor"  aria-hidden="true"><span class="octicon octicon-link"></span></b>Change Default Settings of the Plugin - <em><em>It isn't necessary, default is horizontal</em></em>
+                    </h2>
+
+                    <div class="highlight highlight-javascript"><pre><span class="pl-v">this</span>.game.kineticScrolling.configure({
+    kineticMovement<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+    timeConstantScroll<span class="pl-k">:</span> <span class="pl-c1">325</span>, <span class="pl-c">//really mimic iOS</span>
+    horizontalScroll<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+    verticalScroll<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+    horizontalWheel<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+    verticalWheel<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+    deltaWheel<span class="pl-k">:</span> <span class="pl-c1">40</span>
+});</pre></div>
+
+                    <h2>
+                        <b id="start-the-plugin" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></b>Start the Plugin</h2>
+
+                    <div class="highlight highlight-javascript"><pre><span class="pl-v">this</span>.game.kineticScrolling.<span class="pl-c1">start</span>();</pre></div>
+
+                    <h2>
+                        <b id="stop-the-plugin" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></b>Stop the Plugin</h2>
+
+                    <div class="highlight highlight-javascript"><pre><span class="pl-v">this</span>.game.kineticScrolling.<span class="pl-c1">stop</span>();</pre></div>
+
+                    <h2>
+                        <b id="complete-example" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></b>Complete Example</h2>
+
+                    <div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> game <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Phaser.Game</span>(<span class="pl-c1">1024</span>, <span class="pl-c1">768</span>, Phaser.AUTO, <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, {
+    <span class="pl-en">init</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+
+        <span class="pl-c">//Load the plugin</span>
+        <span class="pl-v">this</span>.game.kineticScrolling <span class="pl-k">=</span> <span class="pl-v">this</span>.game.<span class="pl-c1">plugins</span>.<span class="pl-c1">add</span>(Phaser.<span class="pl-c1">Plugin</span>.KineticScrolling);
+    },
+    <span class="pl-en">create</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+
+        <span class="pl-c">//Starts the plugin</span>
+        <span class="pl-v">this</span>.game.kineticScrolling.<span class="pl-c1">start</span>();
+
+        <span class="pl-v">this</span>.rectangles <span class="pl-k">=</span> [];
+
+        <span class="pl-k">var</span> initX <span class="pl-k">=</span> <span class="pl-c1">50</span>;
+
+        <span class="pl-k">for</span> (<span class="pl-k">var</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-c1">26</span>; i<span class="pl-k">++</span>) {
+            <span class="pl-v">this</span>.rectangles.<span class="pl-c1">push</span>(<span class="pl-v">this</span>.createRectangle(initX, <span class="pl-v">this</span>.game.world.centerY <span class="pl-k">-</span> <span class="pl-c1">100</span>, <span class="pl-c1">250</span>, <span class="pl-c1">200</span>));
+            <span class="pl-v">this</span>.<span class="pl-c1">index</span> <span class="pl-k">=</span> <span class="pl-v">this</span>.game.add.<span class="pl-c1">text</span>(initX <span class="pl-k">+</span> <span class="pl-c1">125</span>, <span class="pl-v">this</span>.game.world.centerY, i <span class="pl-k">+</span> <span class="pl-c1">1</span>,
+                        { font<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>bold 150px Arial<span class="pl-pds">'</span></span>, align<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>center<span class="pl-pds">"</span></span> });
+            <span class="pl-v">this</span>.<span class="pl-c1">index</span>.anchor.set(<span class="pl-c1">0.5</span>);
+            initX <span class="pl-k">+=</span> <span class="pl-c1">300</span>;
+        }
+
+        <span class="pl-c">//Changing the world width</span>
+        <span class="pl-v">this</span>.game.world.setBounds(<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">320</span> <span class="pl-k">*</span> <span class="pl-v">this</span>.rectangles.<span class="pl-c1">length</span>, <span class="pl-v">this</span>.game.<span class="pl-c1">height</span>);
+    },
+    <span class="pl-en">createRectangle</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">x</span>, <span class="pl-smi">y</span>, <span class="pl-smi">w</span>, <span class="pl-smi">h</span>) {
+        <span class="pl-k">var</span> sprite <span class="pl-k">=</span> <span class="pl-v">this</span>.game.add.graphics(x, y);
+        sprite.beginFill(Phaser.Color.getRandomColor(<span class="pl-c1">100</span>, <span class="pl-c1">255</span>), <span class="pl-c1">1</span>);
+        sprite.bounds <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">PIXI.Rectangle</span>(<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, w, h);
+        sprite.drawRect(<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, w, h);
+        <span class="pl-k">return</span> sprite;
+    }
+});</pre></div>
+
+                    <h1>
+                        <b id="happy-scrolling" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></b>Happy scrolling</h1>
+
+                    <p>Made with &lt;3</p>
+					<img style="margin-top: -90px;" width="150px" src="http://phaser.azurewebsites.net/assets/nicholls.png" align="right">
+                    <br />
+                    <div id="kinematicHVGame" style="position: relative;"></div>
+                </section>
+
+                <aside id="sidebar" style="text-align: center;">
+
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="padding: 0;background: none;">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="jdnichollsc@hotmail.com">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="item_name" value="Proyecto 26">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="bn" value="PP-DonationsBF:beer.jpeg:NonHostedGuest">
+<input type="image" style="max-width: 200px;" src="http://proyecto26.github.io/Phaser-Kinetic-Scrolling-Plugin/img/beer.jpeg" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+                    <div id="kinematicVerticalGame" style="margin-bottom: 50px;position: relative;"></div>
+
+                    <a href="https://github.com/proyecto26/Phaser-Kinetic-Scrolling-Plugin/zipball/master" class="button">
+                        <small>Download</small>
+            .zip file
+                    </a>
+                    <a href="https://github.com/proyecto26/Phaser-Kinetic-Scrolling-Plugin/tarball/master" class="button">
+                        <small>Download</small>
+            .tar.gz file
+                    </a>
+
+                    <p class="repo-owner"><a href="https://github.com/proyecto26/Phaser-Kinetic-Scrolling"></a> is maintained by <a href="https://github.com/proyecto26">proyecto26</a>.</p>
+
+                    <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+
+
+                    <a href="http://www.nicholls.co" target="_blank"><div id="nichollsImage"></div></a>
+                </aside>
+            </div>
+        </div>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/phaser/2.3.0/phaser.js"></script>
+        <script src="lib/jquery.waypoints.min.js"></script>
+        <script src="lib/inview.min.js"></script>
+        <script src="lib/phaser-kinetic-scrolling-plugin.min.js"></script>
+        <script src="js/base64Images.js"></script>
+        <script src="js/kinematicHorizontalGame.js"></script>
+        <script src="js/kinematicVerticalGame.js"></script>
+        <script src="js/kinematicHVGame.js"></script>
+        <script>
+            var img = document.createElement("img");
+            img.setAttribute("src", nicholsURI);
+            img.setAttribute("alt", "Author");
+            document.getElementById("nichollsImage").appendChild(img);
+        </script>
+        <div id="disqus_thread" style="width: 90%;margin-left: 5%;margin-top: 50px;"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES * * */
+            var disqus_shortname = 'kineticscrollingplugin';
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    </body>
+</html>
